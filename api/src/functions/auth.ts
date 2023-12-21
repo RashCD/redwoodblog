@@ -159,7 +159,7 @@ export const handler = async (
       Path: '/',
       SameSite: 'Strict',
       Secure: process.env.NODE_ENV !== 'development',
-      Domain: 'https://*.vercel.app',
+      Domain: 'vercel.app',
     },
 
     forgotPassword: forgotPasswordOptions,
