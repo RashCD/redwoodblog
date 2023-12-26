@@ -9,7 +9,7 @@ import {
   Submit,
   FieldError,
 } from '@redwoodjs/forms'
-import { Link, navigate, routes } from '@redwoodjs/router'
+import { navigate, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
 
@@ -101,15 +101,6 @@ const LoginPage = () => {
                     }}
                   />
 
-                  <div className="rw-forgot-link">
-                    <Link
-                      to={routes.forgotPassword()}
-                      className="rw-forgot-link"
-                    >
-                      Forgot Password?
-                    </Link>
-                  </div>
-
                   <FieldError name="password" className="rw-field-error" />
 
                   <div className="rw-button-group">
@@ -118,12 +109,6 @@ const LoginPage = () => {
                 </Form>
               </div>
             </div>
-          </div>
-          <div className="rw-login-link">
-            <span>Don&apos;t have an account?</span>{' '}
-            <Link to={routes.signup()} className="rw-link">
-              Sign up!
-            </Link>
           </div>
         </div>
       </main>

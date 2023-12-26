@@ -21,8 +21,8 @@ export const handler = async (
     // You could use this return value to, for example, show the email
     // address in a toast message so the user will know it worked and where
     // to look for the email.
-    handler: (user) => {
-      return user
+    handler: () => {
+      return false
     },
 
     // How long the resetToken is valid for, in seconds (default is 24 hours)
@@ -73,7 +73,7 @@ export const handler = async (
     // in. Return `false` otherwise, and in the Reset Password page redirect the
     // user to the login page.
     handler: (_user) => {
-      return true
+      return false
     },
 
     // If `false` then the new password MUST be different from the current one
@@ -107,15 +107,16 @@ export const handler = async (
     //
     // If this returns anything else, it will be returned by the
     // `signUp()` function in the form of: `{ message: 'String here' }`.
-    handler: ({ username, hashedPassword, salt, userAttributes }) => {
-      return db.user.create({
-        data: {
-          email: username,
-          hashedPassword: hashedPassword,
-          salt: salt,
-          name: userAttributes.name,
-        },
-      })
+    handler: () => {
+      // return db.user.create({
+      //   data: {
+      //     email: username,
+      //     hashedPassword: hashedPassword,
+      //     salt: salt,
+      //     name: userAttributes.name,
+      //   },
+      // })
+      return false
     },
 
     // Include any format checks for password here. Return `true` if the
