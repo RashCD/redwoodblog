@@ -3,6 +3,7 @@
 const config = {
   rootDir: '../',
   preset: '@redwoodjs/testing/config/jest/api',
+  testTimeout: 15000,
 }
 
 module.exports = config

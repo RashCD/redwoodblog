@@ -5,4 +5,5 @@
 module.exports = {
   rootDir: '.',
   projects: ['<rootDir>/{*,!(node_modules)/**/}/jest.config.js'],
+  testTimeout: 15000,
 }

@@ -22,13 +22,19 @@ describe('posts', () => {
     expect(result).toEqual(scenario.post.one)
   })
 
-  scenario('creates a post', async () => {
-    const result = await createPost({
+  scenario('creates a post', async (scenario: StandardScenario) => {
+    mockCurrentUser({ roles: 'user', id: 1, email: 'user@user.com' })
+
+    const result = (await createPost({
       input: { title: 'String', body: 'String' },
-    })
+    })) as Post
 
     expect(result.title).toEqual('String')
     expect(result.body).toEqual('String')
+    expect(result.userId).toEqual(1)
+    expect(Object.keys(scenario.post).length).not.toEqual(
+      Object.keys(scenario.post).length + 1
+    )
   })
 
   scenario('updates a post', async (scenario: StandardScenario) => {

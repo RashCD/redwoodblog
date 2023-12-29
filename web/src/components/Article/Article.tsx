@@ -1,4 +1,4 @@
-import type { Post } from 'types/graphql'
+import type { Post, User } from 'types/graphql'
 
 import { Link, routes } from '@redwoodjs/router'
 
@@ -6,7 +6,7 @@ import CommentForm from 'src/components/CommentForm'
 import CommentsCell from 'src/components/CommentsCell'
 
 interface Props {
-  article: Omit<Post, 'createdAt'>
+  article: Pick<Post, 'id' | 'title' | 'body'> & { user: Pick<User, 'name'> }
   summary?: boolean
 }
 
@@ -20,6 +20,10 @@ const Article = ({ article, summary = false }: Props) => {
       <header>
         <h2>
           <Link to={routes.article({ id: article.id })}>{article.title}</Link>
+          <span className="ml-2 text-gray-400 font-normal">
+            {' '}
+            by {article.user.name}
+          </span>
         </h2>
       </header>
       <div className="mt-2 text-gray-900 font-light">
