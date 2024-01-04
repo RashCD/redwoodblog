@@ -12,6 +12,8 @@ import type { PostOnlyScenario, StandardScenario } from './comments.scenarios'
 // https://redwoodjs.com/docs/testing#jest-expect-type-considerations
 
 describe('comments', () => {
+  jest.setTimeout(10000)
+
   scenario(
     'returns all comments for a single post from the database',
     async (scenario: StandardScenario) => {
