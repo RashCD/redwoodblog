@@ -20,13 +20,13 @@ const Article = ({ article, summary = false }: Props) => {
       <header>
         <h2>
           <Link to={routes.article({ id: article.id })}>{article.title}</Link>
-          <span className="ml-2 text-gray-400 font-normal">
+          <span className="ml-2 font-normal text-gray-400">
             {' '}
             by {article.user.name}
           </span>
         </h2>
       </header>
-      <div className="mt-2 text-gray-900 font-light">
+      <div className="mt-2 font-light text-gray-900">
         {summary ? truncate(article.body, 100) : article.body}
       </div>
       {!summary && (

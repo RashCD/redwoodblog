@@ -44,19 +44,19 @@ const Comment = ({ comment }: Props) => {
   }
 
   return (
-    <div className="bg-gray-200 p-8 rounded-lg relative">
+    <div className="relative rounded-lg bg-gray-200 p-8">
       <header className="flex justify-between">
         <h2 className="font-semibold text-gray-700">{comment.name}</h2>
         <time className="text-xs text-gray-500" dateTime={comment.createdAt}>
           {formattedDate(comment.createdAt)}
         </time>
       </header>
-      <p className="text-sm mt-2">{comment.body}</p>
+      <p className="mt-2 text-sm">{comment.body}</p>
       {hasRole('moderator') && (
         <button
           type="button"
           onClick={moderate}
-          className="absolute bottom-2 right-2 bg-red-500 text-xs rounded text-white px-2 py-1"
+          className="absolute bottom-2 right-2 rounded bg-red-500 px-2 py-1 text-xs text-white"
         >
           Delete
         </button>

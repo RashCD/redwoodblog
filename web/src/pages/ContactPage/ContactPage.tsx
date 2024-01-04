@@ -14,7 +14,7 @@ import {
   FormError,
   useForm,
 } from '@redwoodjs/forms'
-import { MetaTags, useMutation } from '@redwoodjs/web'
+import { Metadata, useMutation } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
 
 interface FormValues {
@@ -50,8 +50,7 @@ const ContactPage = () => {
 
   return (
     <>
-      <MetaTags title="Contact" description="Contact page" />
-
+      <Metadata title="Contact" description="Contact page" og />
       <Toaster />
       <Form
         onSubmit={onSubmit}

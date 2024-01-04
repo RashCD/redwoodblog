@@ -51,7 +51,7 @@ const CommentForm = ({ postId }: Props) => {
 
   return (
     <div className={hasPosted ? 'hidden' : ''}>
-      <h3 className="font-light text-lg text-gray-600">Leave a Comment</h3>
+      <h3 className="text-lg font-light text-gray-600">Leave a Comment</h3>
       <Form className="mt-4 w-full" onSubmit={onSubmit}>
         <FormError
           error={error}
@@ -59,29 +59,29 @@ const CommentForm = ({ postId }: Props) => {
           wrapperClassName="bg-red-100 text-red-900 text-sm p-3 rounded"
         />
 
-        <Label name="name" className="block text-sm text-gray-600 uppercase">
+        <Label name="name" className="block text-sm uppercase text-gray-600">
           Name
         </Label>
         <TextField
           name="name"
-          className="block w-full p-1 border rounded text-xs"
+          className="block w-full rounded border p-1 text-xs"
           validation={{ required: true }}
         />
 
         <Label
           name="body"
-          className="block mt-4 text-sm text-gray-600 uppercase"
+          className="mt-4 block text-sm uppercase text-gray-600"
         >
           Comment
         </Label>
         <TextAreaField
           name="body"
-          className="block w-full p-1 border rounded h-24 text-xs"
+          className="block h-24 w-full rounded border p-1 text-xs"
           validation={{ required: true }}
         />
 
         <Submit
-          className="block mt-4 bg-blue-500 text-white text-xs font-semibold uppercase tracking-wide rounded px-3 py-2 disabled:opacity-50"
+          className="mt-4 block rounded bg-blue-500 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-white disabled:opacity-50"
           disabled={loading}
         >
           Submit
